@@ -7,8 +7,8 @@ pipeline {
     agent any
 
     environment {
-    AWS_ACCESS_KEY_ID     = credentials('terraform_module')
-    AWS_SECRET_ACCESS_KEY = credentials('terraform_module')
+    AWS_ACCESS_KEY_ID     = credentials('terraform_module_cred')
+    AWS_SECRET_ACCESS_KEY = credentials('terraform_module_cred')
     }
     stages {
         stage('Terraform Version') {
