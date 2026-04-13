@@ -15,20 +15,20 @@ pipeline {
 
         stage('Terraform Version') {
             steps {
-                bat 'terraform --version'
+                sh 'terraform --version'
             }
         }
 
         stage('Terraform Format') {
             steps {
-                bat 'terraform fmt'
+                sh 'terraform fmt'
             }
         }
 
         stage('Terraform Init') {
             steps {
                 dir('stakeholder_315354952103') {
-                    bat 'terraform init'
+                    sh 'terraform init'
                 }
             }
         }
@@ -36,7 +36,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 dir('stakeholder_315354952103') {
-                    bat 'terraform plan -var-file=terraform.tfvars -out=tfplan.txt'
+                    sh 'terraform plan -var-file=terraform.tfvars -out=tfplan.txt'
                 }
             }
         }
@@ -44,7 +44,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 dir('stakeholder_315354952103') {
-                    bat 'terraform apply -auto-approve tfplan.txt'
+                    sh 'terraform apply -auto-approve tfplan.txt'
                 }
             }
         }
