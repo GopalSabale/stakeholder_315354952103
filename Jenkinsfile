@@ -25,7 +25,7 @@ pipeline {
         }		
         stage('Terraform init') {
             steps {
-                echo 'Terraform Initialization is In Progress!'
+                echo 'Terraform Initialization is In Progress...!'
                 sh 'terraform init'
             }
         }
