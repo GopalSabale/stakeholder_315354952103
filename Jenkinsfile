@@ -42,7 +42,7 @@ pipeline {
                     equals expected: true, actual: params.autoApprove
                 }
             }
-     
+        }
         stage('Terraform Apply') {
             steps {
                 echo 'Terraform Apply'
